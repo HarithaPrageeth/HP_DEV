@@ -1,4 +1,4 @@
-// src/components/Projects.jsx - Modal Version (No Router Needed)
+// src/components/Projects.jsx - Modal Version (No Router)
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiGithub, FiX, FiCalendar, FiFolder, FiCheckCircle, FiAlertCircle, FiExternalLink } from 'react-icons/fi';
@@ -18,8 +18,8 @@ const Projects = () => {
       id: 1,
       title: "Serendipity Sri Lanka - Travel App",
       shortDescription: "A beautiful Flutter travel application showcasing Sri Lanka's stunning destinations.",
-      description: "Serendipity Sri Lanka is a beautiful Flutter travel application that showcases the stunning destinations of Sri Lanka. The name 'Serendipity' comes from Sri Lanka's ancient name 'Serendib' - meaning fortunate discoveries made by accident, perfectly capturing the magic of discovering Sri Lanka's hidden treasures.",
-      fullDescription: "This comprehensive travel app was developed to help tourists and locals discover the beauty of Sri Lanka. The app includes detailed information about historical sites, beaches, wildlife sanctuaries, and cultural experiences. Users can create personalized travel itineraries, read reviews from other travelers, and get real-time updates on weather and local events.",
+      description: "Serendipity Sri Lanka is a beautiful Flutter travel application that showcases the stunning destinations of Sri Lanka.",
+      fullDescription: "This comprehensive travel app helps tourists and locals discover the beauty of Sri Lanka with detailed information about historical sites, beaches, wildlife sanctuaries, and cultural experiences.",
       tech: ["Flutter", "Dart", "Firebase", "Google Maps API"],
       image: travelAppImg,
       github: "https://github.com/HarithaPrageeth/sri_lanka_travel_app",
@@ -42,19 +42,19 @@ const Projects = () => {
       id: 2,
       title: "GPA Tracker Pro",
       shortDescription: "A comprehensive academic management system for tracking GPA across multiple semesters.",
-      description: "GPA Tracker Pro is a comprehensive, modern web application designed to help students track their academic performance across multiple semesters.",
-      fullDescription: "The application addresses the needs of university students who struggle with manual GPA calculations. It provides real-time GPA updates, offers predictive analytics, and generates professional reports.",
+      description: "GPA Tracker Pro is a comprehensive web application for tracking academic performance across multiple semesters.",
+      fullDescription: "The application provides real-time GPA updates, predictive analytics, and professional report generation for university students.",
       tech: ["HTML", "CSS", "JavaScript", "Node.js", "Express", "MongoDB"],
       image: GPAAppImg,
       github: "https://github.com/HarithaPrageeth/GPA-Tracker-Pro---Complete-Academic-Management-System",
       demo: "#",
       features: [
         "Multi-semester GPA tracking",
-        "CGPA calculator",
+        "CGPA calculator with what-if scenarios",
         "PDF report generation",
-        "User authentication",
-        "Course management",
-        "Performance analytics"
+        "Secure user authentication",
+        "Course management dashboard",
+        "Performance analytics charts"
       ],
       challenges: "Ensuring accurate GPA calculations across different grading systems.",
       solutions: "Created a flexible grading system with configurable grading scales.",
@@ -66,17 +66,17 @@ const Projects = () => {
       id: 3,
       title: "The Voice of Sri Lanka - HelaLink",
       shortDescription: "A mobile-first social media platform connecting Sri Lankan users.",
-      description: "A mobile-first social media platform designed to connect Sri Lankan users through secure, identity-verified profiles.",
-      fullDescription: "HelaLink provides a safe and culturally relevant social networking experience for Sri Lankans with verified identities to reduce fake accounts.",
+      description: "A mobile-first social media platform connecting Sri Lankan users through secure, identity-verified profiles.",
+      fullDescription: "HelaLink provides a safe and culturally relevant social networking experience for Sri Lankans with verified identities.",
       tech: ["UI/UX", "Adobe XD", "Figma", "Prototyping"],
       image: HelaLinkImg,
       github: "https://github.com/HarithaPrageeth/HelaLink---Social-Media-Platform-UI-UX-",
       demo: "#",
       features: [
         "Identity-verified profiles",
-        "Encrypted messaging",
-        "Community groups",
-        "Content sharing",
+        "Encrypted messaging system",
+        "Community groups and forums",
+        "Content sharing with privacy controls",
         "Multi-language support",
         "Dark mode"
       ],
@@ -90,16 +90,16 @@ const Projects = () => {
       id: 4,
       title: "Internship Management System",
       shortDescription: "A platform connecting students with internship opportunities.",
-      description: "A complete web-based platform for managing internships, connecting students with companies.",
-      fullDescription: "This system streamlines the entire internship process from posting opportunities to final placement with company profiles, student applications, and admin oversight.",
+      description: "A complete web-based platform for managing internships and connecting students with companies.",
+      fullDescription: "This system streamlines the entire internship process from posting opportunities to final placement.",
       tech: ["HTML", "CSS", "PHP", "MySQL", "Bootstrap"],
       image: InternHubImg,
       github: "https://github.com/HarithaPrageeth/Internship-Management-System",
       demo: "#",
       features: [
         "Company and student profiles",
-        "Internship search",
-        "Application tracking",
+        "Advanced internship search",
+        "Application tracking system",
         "Resume management",
         "Email notifications",
         "Admin dashboard"
@@ -115,18 +115,18 @@ const Projects = () => {
       title: "Universal Converter Switch (UCS)",
       shortDescription: "A comprehensive desktop application for real-time conversions.",
       description: "A user-friendly desktop application for real-time conversions across multiple measurement types.",
-      fullDescription: "UCS supports over 500 conversion types across categories including length, weight, temperature, currency, data storage, and speed with a clean, intuitive interface.",
+      fullDescription: "UCS supports over 500 conversion types across categories including length, weight, temperature, and currency.",
       tech: ["Java", "Java Swing", "OOP", "File I/O"],
       image: UCSImg,
       github: "https://github.com/HarithaPrageeth/UCS",
       demo: "#",
       features: [
         "500+ unit conversions",
-        "Real-time currency rates",
-        "Conversion history",
-        "Copy to clipboard",
-        "Dark/Light theme",
-        "Export to CSV"
+        "Real-time currency exchange rates",
+        "Conversion history tracking",
+        "Copy to clipboard functionality",
+        "Dark/Light theme toggle",
+        "Export conversion history to CSV"
       ],
       challenges: "Ensuring mathematical accuracy for hundreds of conversion formulas.",
       solutions: "Created a modular conversion engine with thoroughly tested formulas.",
@@ -184,7 +184,7 @@ const Projects = () => {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 hover:text-purple-400 transition-colors duration-300">
+                  <h3 className="text-xl font-bold mb-2 hover:text-purple-400 transition-colors">
                     {project.title}
                   </h3>
                   <p className="text-gray-400 mb-4 leading-relaxed">{project.shortDescription}</p>
@@ -227,7 +227,7 @@ const Projects = () => {
         </div>
       </section>
 
-      {/* Modal for Project Details */}
+      {/* Modal */}
       <AnimatePresence>
         {selectedProject && (
           <motion.div
@@ -245,7 +245,6 @@ const Projects = () => {
               className="container mx-auto px-4 py-8 max-w-6xl min-h-screen flex items-center"
             >
               <div className="bg-gray-800 rounded-lg overflow-hidden shadow-2xl w-full">
-                {/* Modal Header */}
                 <div className="relative h-64 md:h-96">
                   <img 
                     src={selectedProject.image} 
@@ -260,7 +259,6 @@ const Projects = () => {
                   </button>
                 </div>
 
-                {/* Modal Content */}
                 <div className="p-6 md:p-8">
                   <div className="flex flex-wrap justify-between items-start gap-4 mb-6">
                     <div>
@@ -304,7 +302,6 @@ const Projects = () => {
                   </div>
 
                   <div className="grid lg:grid-cols-3 gap-8">
-                    {/* Main Content */}
                     <div className="lg:col-span-2 space-y-6">
                       <div>
                         <h3 className="text-xl font-bold mb-3">Project Overview</h3>
@@ -345,7 +342,6 @@ const Projects = () => {
                       </div>
                     </div>
 
-                    {/* Sidebar */}
                     <div className="space-y-6">
                       <div>
                         <h3 className="text-xl font-bold mb-3">Technologies</h3>
@@ -355,28 +351,6 @@ const Projects = () => {
                               {tech}
                             </span>
                           ))}
-                        </div>
-                      </div>
-
-                      <div>
-                        <h3 className="text-xl font-bold mb-3">Project Info</h3>
-                        <div className="space-y-2">
-                          <div>
-                            <p className="text-sm text-gray-400">Category</p>
-                            <p className="text-gray-200">{selectedProject.category}</p>
-                          </div>
-                          <div>
-                            <p className="text-sm text-gray-400">Year</p>
-                            <p className="text-gray-200">{selectedProject.year}</p>
-                          </div>
-                          <div>
-                            <p className="text-sm text-gray-400">Status</p>
-                            <p className={`font-semibold ${
-                              selectedProject.status === 'Completed' ? 'text-green-400' : 'text-yellow-400'
-                            }`}>
-                              {selectedProject.status}
-                            </p>
-                          </div>
                         </div>
                       </div>
                     </div>
